@@ -32,9 +32,6 @@ public class AuthActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-        setTheme(R.style.Theme_PetiPet);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
