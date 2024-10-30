@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PetiPet</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_favorites">Favoritos</string>
+    <string name="title_me">Mi perfil</string>
+    <string name="intro_title">¡Tu nuevo mejor amigo <font color="#834BF4">\n te está esperando!</font></string>
+    <string name="intro_description">Descubre la alegría de adoptar y darle un hogar a una mascota que lo necesita.</string>
+    <string name="intro_button_text">Empieza ahora</string>
+    <string name="login_text">¿Ya tienes una cuenta? <b><font color="#834BF4">Inicia sesión</font></b></string>
+</resources>
