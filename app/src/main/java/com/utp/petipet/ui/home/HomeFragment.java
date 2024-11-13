@@ -5,39 +5,45 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.utp.petipet.AuthActivity;
 import com.utp.petipet.MainActivity;
-import com.utp.petipet.R;
+import com.utp.petipet.activity.IntroActivity;
 import com.utp.petipet.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private FragmentHomeBinding binding;
-    Button logoutButton;
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mAuth = FirebaseAuth.getInstance();
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(requireActivity()).get(HomeViewModel.class); // Asegúrate de usar requireActivity()
+
+        binding = FragmentHomeBinding.inflate(getLayoutInflater() );
         View root = binding.getRoot();
 
+        ((MainActivity) getActivity()).getSupportActionBar().hide();
 
-        logoutButton = root.findViewById(R.id.logoutButton);
-        logoutButton.setOnClickListener(v -> logout());
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        mAuth = FirebaseAuth.getInstance();
+
+/*
+        // Observa los datos en el ViewModel y actualiza los TextViews
+        homeViewModel.getEmail().observe(getViewLifecycleOwner(), email -> {
+            binding.USER.setText(email);
+        });
+
+        homeViewModel.getProvider().observe(getViewLifecycleOwner(), provider -> {
+            binding.PROVIDER.setText(provider);
+        });*/
+
         return root;
     }
 
@@ -47,9 +53,6 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
 
-    private void logout(){
-        mAuth.signOut();
-        Intent authIntent = new Intent(requireActivity(), AuthActivity.class);
-        startActivity(authIntent);
-    }
+
+
 }
