@@ -11,11 +11,19 @@
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Personaliza el tema aquí -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_in</item>
         <item name="android:windowExitAnimation">@anim/slide_out</item>
     </style>
+
+    <style name="EditTextForm" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#CE93D8</item>
+        <item name="colorControlActivated">#AB47BC</item>
+        <item name="android:textColorHighlight">#E1BEE7</item>
+    </style>
+
+
 </resources>

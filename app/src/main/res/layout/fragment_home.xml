@@ -19,46 +19,14 @@
             android:contentDescription="Imagen de ejemplo"
             android:scaleType="fitCenter"
          />
-        <ImageView
-            android:id="@+id/imageView132313"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/banner_home"
-            android:contentDescription="Imagen de ejemplo"
-            android:scaleType="fitCenter"
-            />
-        <ImageView
-            android:id="@+id/imageView12313"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/banner_home"
-            android:contentDescription="Imagen de ejemplo"
-            android:scaleType="fitCenter"
-            />
-        <ImageView
-            android:id="@+id/imageView3123"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/banner_home"
-            android:contentDescription="Imagen de ejemplo"
-            android:scaleType="fitCenter"
-            />
-        <ImageView
-            android:id="@+id/imageView31"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/banner_home"
-            android:contentDescription="Imagen de ejemplo"
-            android:scaleType="fitCenter"
-            />
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/banner_home"
-            android:contentDescription="Imagen de ejemplo"
-            android:scaleType="fitCenter"
-            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Explora"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
     </LinearLayout>
 </ScrollView>
