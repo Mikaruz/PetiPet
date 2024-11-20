@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         // Obtener datos del usuario
         String email = getIntent().getStringExtra("email");
         String provider = getIntent().getStringExtra("provider");
+        String name = getIntent().getStringExtra("name");
+        String phoneNumber = getIntent().getStringExtra("phoneNumber");
 
         // Crear el ViewModel y pasar los datos
         HomeViewModel viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
@@ -57,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         AboutMeViewModel aboutMeViewModel = new ViewModelProvider(this).get(AboutMeViewModel.class);
         aboutMeViewModel.setEmail(email);
         aboutMeViewModel.setProvider(provider);
+        aboutMeViewModel.setName(name);
+        aboutMeViewModel.setPhoneNumber(phoneNumber);
+
 
 
         /*getSupportFragmentManager().beginTransaction()

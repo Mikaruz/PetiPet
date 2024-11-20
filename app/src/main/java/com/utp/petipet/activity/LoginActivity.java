@@ -2,6 +2,7 @@ package com.utp.petipet.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,9 +18,11 @@ import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.utp.petipet.MainActivity;
 import com.utp.petipet.ProviderType;
 import com.utp.petipet.R;
+import com.utp.petipet.model.UserApp;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -63,7 +66,27 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            showHome(user.getEmail(), ProviderType.BASIC);
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+                            String userId = user.getUid();
+
+                            // Recupera los datos del usuario desde Firestore
+                            db.collection("user").document(userId)
+                                    .get()
+                                    .addOnSuccessListener(documentSnapshot -> {
+                                        if (documentSnapshot.exists()) {
+                                            // Convierte el documento en un objeto User
+                                            UserApp userApp = documentSnapshot.toObject(UserApp.class);
+                                            showHome(email, ProviderType.BASIC, userApp.getName(), userApp.getPhoneNumber());
+                                        } else {
+                                            Log.e("Login", "No se encontraron datos del usuario.");
+                                        }
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Log.e("Login", "Error al obtener datos del usuario: " + e.getMessage());
+                                    });
+
                         } else {
                             showAlert();
                         }
@@ -83,10 +106,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void showHome(String email, ProviderType provider) {
+    private void showHome(String email, ProviderType provider, String name, String phoneNumber) {
         Intent homeIntent = new Intent(this, MainActivity.class);
         homeIntent.putExtra("email", email);
         homeIntent.putExtra("provider", provider.name());
+        homeIntent.putExtra("name", name);
+        homeIntent.putExtra("phoneNumber", phoneNumber);
         startActivity(homeIntent);
         finish();
     }

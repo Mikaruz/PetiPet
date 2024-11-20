@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="30dp"
+    android:paddingTop="20dp">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageDetalleMascota"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/pet_placeholder"
+        app:shapeAppearanceOverlay="@style/roundedPetImageView" />
+
+    <TextView
+        android:id="@+id/textDetalleNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="Nombre"
+        android:textAlignment="center"
+
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textDetalleRaza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Raza"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/text_view_pet_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="Edad"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_view_pet_description"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Descripción"
+        android:fontFamily="@font/poppins"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/adopt_button"
+        style="@android:style/Widget.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/purple_button_bg"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Adoptar"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</LinearLayout>

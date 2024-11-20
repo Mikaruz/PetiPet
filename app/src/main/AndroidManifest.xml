@@ -14,14 +14,16 @@
         android:theme="@style/Theme.PetiPet"
         tools:targetApi="31">
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.PetDetailsActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar"/>
-
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false"
@@ -32,8 +34,8 @@
             android:exported="false" />
         <activity
             android:name=".activity.IntroActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

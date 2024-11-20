@@ -33,9 +33,17 @@ public class AboutMeFragment extends Fragment {
             binding.aboutMeEmailTextView.setText(email);
         });
 
-        aboutMeViewModel.getProvider().observe(getViewLifecycleOwner(), provider -> {
-            binding.aboutMeProviderTextView.setText(provider);
+        aboutMeViewModel.getPhoneNumber().observe(getViewLifecycleOwner(), phoneNumber -> {
+            binding.aboutMePhoneNumberTextView.setText(phoneNumber);
         });
+
+        aboutMeViewModel.getName().observe(getViewLifecycleOwner(), name -> {
+            binding.aboutMeNameTextView.setText(name);
+        });
+
+
+
+
 
 
         return root;
