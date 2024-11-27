@@ -77,7 +77,6 @@ public class RegisterActivity extends AppCompatActivity {
         EditText nameEditText = findViewById(R.id.name_edit_text);
         EditText phoneNumberEditText = findViewById(R.id.phone_number_edit_text);
 
-        TextView goLogin = findViewById(R.id.go_login_text_view);
 
         registerButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
@@ -88,10 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
             register(email, password, name, phoneNumber);
         });
 
-        goLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
+
     }
 
     private void register(String email, String password, String name, String phoneNumber) {

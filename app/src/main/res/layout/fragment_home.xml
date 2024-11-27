@@ -25,10 +25,53 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Explora"
+            android:text="Categorías"
             android:textColor="@color/black"
             android:textSize="22sp" />
 
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnTodos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textAllCaps="false"
+                android:text="🌎" />
+
+            <Button
+                android:id="@+id/btnGatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins"
+                android:textAllCaps="false"
+                android:text="😺 Gatos" />
+
+            <Button
+                android:id="@+id/btnPerros"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginStart="8dp"
+                android:text="🐶 Perros" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Explora"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

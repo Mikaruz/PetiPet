@@ -144,17 +144,6 @@
             android:textColor="@color/white"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/go_login_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-
-            android:fontFamily="@font/poppins"
-            android:text="@string/login_text"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
 
 
 

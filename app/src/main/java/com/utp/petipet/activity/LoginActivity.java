@@ -44,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         EditText emailEditText = findViewById(R.id.login_email_edit_text);
         EditText passwordEditText = findViewById(R.id.login_password_edit_text);
 
-        TextView goRegister = findViewById(R.id.go_register_text_view);
 
         loginButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
@@ -53,10 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             login(email, password);
         });
 
-        goRegister.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(intent);
-        });
+
     }
 
     private void login(String email, String password) {

@@ -89,9 +89,18 @@
                 android:textSize="15dp" />
 
             <Button
+                android:id="@+id/editMeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textAllCaps="false"
+                android:text="Editar perfil" />
+
+            <Button
                 android:id="@+id/logoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAllCaps="false"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Cerrar sesión" />
 

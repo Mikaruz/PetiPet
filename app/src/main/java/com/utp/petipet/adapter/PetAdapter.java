@@ -52,7 +52,17 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
                 .error(R.drawable.error_placeholder)
                 .into(holder.petImage);
 
-        // Configurar el clic en el ítem
+
+
+        // Asignar la imagen según el género
+        if ("Masculino".equals(pet.getGender())) {
+            holder.genderImage.setImageResource(R.drawable.male); // Reemplaza 'ic_male' con el nombre de tu recurso
+        } else {
+            holder.genderImage.setImageResource(R.drawable.female); // Reemplaza 'ic_female' con el nombre de tu recurso
+        }
+
+
+            // Configurar el clic en el ítem
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onItemClick(pet);
@@ -68,11 +78,13 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
     static class PetViewHolder extends RecyclerView.ViewHolder {
         TextView textNombre, textRaza;
         ImageView petImage;
+        ImageView genderImage;
 
         PetViewHolder(@NonNull View itemView) {
             super(itemView);
             textNombre = itemView.findViewById(R.id.textNombre);
             petImage = itemView.findViewById(R.id.pet_image);
+            genderImage = itemView.findViewById(R.id.gender_image);
         }
     }
 }
