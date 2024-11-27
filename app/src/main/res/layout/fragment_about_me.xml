@@ -25,7 +25,7 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-
+                android:id="@+id/shapeableImageView"
                 android:src="@drawable/user_placeholder"
                 app:shapeAppearanceOverlay="@style/roundedImageView" />
 

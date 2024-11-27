@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
                 android:textAllCaps="false"
-                android:text="🌎" />
+                android:text="Todos" />
 
             <Button
                 android:id="@+id/btnGatos"

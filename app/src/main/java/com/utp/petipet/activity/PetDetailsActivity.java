@@ -23,10 +23,10 @@ public class PetDetailsActivity extends AppCompatActivity {
 
         // Referencias a las vistas
         TextView textNombre = findViewById(R.id.textDetalleNombre);
-        TextView textRaza = findViewById(R.id.textDetalleRaza);
         ImageView imageMascota = findViewById(R.id.imageDetalleMascota);
         TextView textViewPetDescription = findViewById(R.id.text_view_pet_description);
         TextView textViewPetAge = findViewById(R.id.text_view_pet_age);
+        ImageView imageViewPetSpecie = findViewById(R.id.pet_specie_image);
 
         // Obtener los datos pasados desde el Intent
         String nombre = getIntent().getStringExtra("petName");
@@ -34,12 +34,22 @@ public class PetDetailsActivity extends AppCompatActivity {
         String imagenUrl = getIntent().getStringExtra("petImagenUrl");
         String petDescription = getIntent().getStringExtra("petDescription");
         String petAge = getIntent().getStringExtra("petAge");
+        String gender = getIntent().getStringExtra("petGender");
 
         // Mostrar los datos en las vistas
         textNombre.setText(nombre);
-        textRaza.setText(raza);
         textViewPetDescription.setText(petDescription);
         textViewPetAge.setText(petAge);
+
+
+        // Asignar la imagen según el género
+        if ("Masculino".equals(gender)) { // Aquí 'specie' se usa como género; asegúrate de que sea correcto
+            imageViewPetSpecie.setImageResource(R.drawable.male); // Reemplaza con tu imagen de recurso para masculino
+        } else if ("Femenino".equals(gender)) {
+            imageViewPetSpecie.setImageResource(R.drawable.female); // Reemplaza con tu imagen de recurso para femenino
+        } else {
+            imageViewPetSpecie.setImageResource(R.drawable.pet_placeholder); // Imagen por defecto si no es masculino ni femenino
+        }
 
         Glide.with(this)
                 .load(imagenUrl)

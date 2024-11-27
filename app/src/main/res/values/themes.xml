@@ -34,4 +34,15 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="CustomAlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="buttonBarPositiveButtonStyle">@style/CustomDialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/CustomDialogButton</item>
+    </style>
+
+    <style name="CustomDialogButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/main_purple</item>
+    </style>
+
 </resources>
