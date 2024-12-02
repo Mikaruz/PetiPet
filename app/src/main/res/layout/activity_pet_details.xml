@@ -69,7 +69,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imagePreview"
+            android:id="@+id/owner_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"

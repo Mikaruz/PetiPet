@@ -62,6 +62,7 @@ public class HomeFragment extends Fragment {
             intent.putExtra("petImagenUrl", pet.getImageUrl());
             intent.putExtra("petDescription", pet.getDescription());
             intent.putExtra("petGender", pet.getGender());
+            intent.putExtra("userId", pet.getUserId());
             intent.putExtra("petAge", pet.getAge() + " meses");
             startActivity(intent);
         });

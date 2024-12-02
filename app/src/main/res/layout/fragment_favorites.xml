@@ -1,22 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.favorites.FavoritesFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    android:orientation="vertical">
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/petImageView"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/pet_placeholder"
+            app:shapeAppearanceOverlay="@style/roundedPetImageView" />
+
+
+        <Button
+            android:id="@+id/selectPhotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Subir foto" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:hintTextColor="@color/main_purple">
+
+            <EditText
+                android:id="@+id/petNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:paddingHorizontal="20dp"
+                android:textSize="15sp"
+                android:shadowColor="@color/main_purple"
+                android:theme="@style/EditTextForm" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:hintTextColor="@color/main_purple">
+
+            <EditText
+                android:id="@+id/petDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Descripción"
+                android:inputType="text"
+                android:paddingHorizontal="20dp"
+                android:textSize="15sp"
+                android:shadowColor="@color/main_purple"
+                android:theme="@style/EditTextForm" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:hintTextColor="@color/main_purple">
+
+            <EditText
+                android:id="@+id/petAgeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Edad (meses)"
+                android:inputType="number"
+                android:paddingHorizontal="20dp"
+                android:textSize="15sp"
+                android:shadowColor="@color/main_purple"
+                android:theme="@style/EditTextForm" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/speciesSpinner"
+            android:fontFamily="@font/poppins"
+            android:layout_marginBottom="15dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="15dp"
+            android:outlineSpotShadowColor="@color/main_purple"
+            android:layout_marginTop="8dp"
+            android:entries="@array/species_array" />
+
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="15dp"
+            android:outlineSpotShadowColor="@color/main_purple"
+            android:layout_marginBottom="15dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/gender_array" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addPetButton"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/purple_button_bg"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Poner en adopción"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</ScrollView>

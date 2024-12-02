@@ -8,18 +8,19 @@ public class Pet {
     public String gender;
     public int age;
     public String imageUrl;
+    public String userId;
 
     public Pet() {
     }
 
-    public Pet(String id, String name, String description, String specie, String gender, int age, String imageUrl) {
-        this.id = id;
+    public Pet( String name, String description, String specie, String gender, int age, String imageUrl, String userId) {
         this.name = name;
         this.description = description;
         this.specie = specie;
         this.gender = gender;
         this.age = age;
         this.imageUrl = imageUrl;
+        this.userId = userId;
     }
 
     public String getId(){
@@ -76,5 +77,13 @@ public class Pet {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
